@@ -10,3 +10,10 @@
 .main-content {
   background: lightseagreen;
 }
+
+.countryTable {
+  background: rgb(172, 235, 247);
+  width: 500px;
+  margin: 20px auto 0 auto;
+  /* border: 10px; */
+}
