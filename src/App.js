@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Countries from './components/Countries';
 import CountryService from './services/CountryService';
+import About from './components/About';
 import './App.css';
 
 class App extends Component {
