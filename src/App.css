@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
 .App {
   text-align: center;
 }
@@ -8,6 +17,8 @@
 }
 
 .main-content {
+  margin-top: 0;
+  margin-bottom: 20px;
   background: lightseagreen;
 }
 
@@ -15,5 +26,16 @@
   background: rgb(172, 235, 247);
   width: 500px;
   margin: 20px auto 0 auto;
-  /* border: 10px; */
+  /* margin-bottom: 10px; */
+  padding: 1em;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
