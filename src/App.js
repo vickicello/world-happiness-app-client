@@ -6,14 +6,11 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import CountriesPage from './containers/CountriesPage';
-import { getCountries } from './actions';
+import { fetchAllCountries } from './actions';
 import { connect } from 'react-redux';
 import './App.css';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getCountries()
-  }
 
   render() {
     return (
@@ -33,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, {getCountries})(App);
+export default App;

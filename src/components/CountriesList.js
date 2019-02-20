@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CountriesListItem from './CountriesListItem'
-import { getComments } from '../actions';
+import { fetchAllCountries } from '../actions/index.js';
 
 const CountriesList = ({ countries }) => {
   const renderCountries = countries.map(country =>
@@ -19,7 +18,6 @@ const CountriesList = ({ countries }) => {
             <th>Country</th>
             <th>Happiness Score</th>
           </tr>
-          {/* <Link to={`/countries/${id}`}></Link> */}
           {renderCountries}
         </table>
       </div> 

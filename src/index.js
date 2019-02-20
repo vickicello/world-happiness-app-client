@@ -8,10 +8,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers/rootReducer.js'
 import * as serviceWorker from './serviceWorker';
 
-const middleware = [thunk];
-let store = createStore(rootReducer,   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(...middleware)
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

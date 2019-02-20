@@ -3,6 +3,6 @@ import countriesReducer from './countriesReducer';
 import commentsReducer from './commentsReducer';
 
 export default combineReducers({
-  trails: countriesReducer,
+  countries: countriesReducer,
   comments: commentsReducer
 });

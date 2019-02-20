@@ -1,12 +1,20 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-// fetch country data
-export const setCountries = countries => {
-  return {
-    type: 'GET_COUNTRIES',
-    countries
-  }
+export function fetchAllCountries() {
+  return (dispatch) => {
+    dispatch({type: 'START_ADDING_COUNTRIES'});
+    return fetch(`${API_URL}/countries`)
+      .then(response => response.json())
+      .then(countries => dispatch({type: 'ADD_ALL_COUNTRIES', countries}));
+  };
 }
+// fetch country data
+// export const setCountries = countries => {
+//   return {
+//     type: 'GET_COUNTRIES',
+//     countries
+//   }
+// }
 
 // Comment actions
 export const setComments = comments => {
@@ -33,7 +41,6 @@ export const getComments = (countryId) => {
     .then(comments => {
       dispatch(setComments(comments))
     })
-    // .catch(error => console.log(error));
   }
 }
 
@@ -46,34 +53,22 @@ export const createComment = (comment) => {
       },
       body: JSON.stringify({comment: comment.comment})
     })
-    // .then(handleErrors)
     .then(response => response.json())
     .then(comment => {
       dispatch(addComment(comment))
     })
-    // .catch(error => {
-    //   dispatch({type: 'error'})
-    //  })
   }
 }
 
-// Async actions for Countries
-export const getCountries = () => {
-  return dispatch => {
-    return fetch(`${API_URL}/countries`, {
-      method: "GET",
-    })
-      .then(res => res.json())
-      .then(countries => {
-        dispatch(setCountries(countries))
-      })
-      // .catch(error => console.log(error));
-  }
-}
-
-// function handleErrors(response){
-//   if (!response.ok) {
-//     throw Error(response.statusText);
+// // Async actions for Countries
+// export const getCountries = () => {
+//   return dispatch => {
+//     return fetch(`${API_URL}/countries`, {
+//       method: "GET",
+//     })
+//       .then(res => res.json())
+//       .then(countries => {
+//         dispatch(setCountries(countries))
+//       })
 //   }
-//   return response;
 // }
