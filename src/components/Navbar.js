@@ -11,27 +11,34 @@ const linkStyle = {
 }
 
 const Navbar = () => {
-    return (
-      <div className="navbar">
-        <NavLink
-          to="/"
-          exact
-          style={linkStyle}
-          activeStyle={{
-            background: '#e8e8ef'
-          }}
-          >Home</NavLink>
-        <NavLink
-          to="/about"
-          exact
-          style={linkStyle}
-          activeStyle={{
-            background: '#e8e8ef'
-          }}
-          >About</NavLink>
-      </div>
-
-    )
+  return (
+    <div className="navbar">
+      <NavLink
+        to="/"
+        exact
+        style={linkStyle}
+        activeStyle={{
+          background: '#e8e8ef'
+        }}
+        >Home</NavLink>
+      <NavLink
+        to="/countries"
+        exact
+        style={linkStyle}
+        activeStyle={{
+          background: '#e8e8ef'
+        }}
+        >Countries</NavLink>
+      <NavLink
+        to="/about"
+        exact
+        style={linkStyle}
+        activeStyle={{
+          background: '#e8e8ef'
+        }}
+        >About</NavLink>
+    </div>
+  )
 }
 
 export default Navbar;
